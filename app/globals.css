@@ -1,0 +1,118 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Wind Glass Brand Colors */
+  --deep-navy: #0F1F3A;
+  --midnight: #0B132B;
+  --dark-slate: #1A2644;
+  --dark-blue: #1A2F60;
+  --cyan-crystal: #00B4D8;
+  --deep-cyan: #0077A0;
+  --neon-silica: #39FF14;
+  --steel-mist: #B0BEC5;
+  --slate-grey: #546E7A;
+  --alice-blue: #F0F8FF;
+  --white: #FFFFFF;
+  --footer-dark: #050A1A;
+
+  /* Semantic tokens */
+  --background: var(--deep-navy);
+  --foreground: var(--white);
+  --card: var(--white);
+  --card-foreground: var(--midnight);
+  --popover: var(--dark-slate);
+  --popover-foreground: var(--white);
+  --primary: var(--cyan-crystal);
+  --primary-foreground: var(--white);
+  --secondary: var(--dark-slate);
+  --secondary-foreground: var(--white);
+  --muted: var(--steel-mist);
+  --muted-foreground: var(--slate-grey);
+  --accent: var(--neon-silica);
+  --accent-foreground: var(--midnight);
+  --border: var(--dark-slate);
+  --input: var(--dark-slate);
+  --ring: var(--cyan-crystal);
+  --radius: 0rem;
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  --font-display: 'Barlow Condensed', 'Barlow Condensed Fallback', system-ui, sans-serif;
+  --color-deep-navy: var(--deep-navy);
+  --color-midnight: var(--midnight);
+  --color-dark-slate: var(--dark-slate);
+  --color-dark-blue: var(--dark-blue);
+  --color-cyan-crystal: var(--cyan-crystal);
+  --color-deep-cyan: var(--deep-cyan);
+  --color-neon-silica: var(--neon-silica);
+  --color-steel-mist: var(--steel-mist);
+  --color-slate-grey: var(--slate-grey);
+  --color-alice-blue: var(--alice-blue);
+  --color-white: var(--white);
+  --color-footer-dark: var(--footer-dark);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-deep-navy text-foreground;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Grid texture for dark sections */
+.grid-texture {
+  background-image:
+    linear-gradient(to right, rgba(26, 47, 96, 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 47, 96, 0.18) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Angled section clips */
+.clip-angle-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
+
+.clip-angle-top {
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+}
+
+.clip-angle-both {
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+}
+
+/* Display font utility */
+.font-display {
+  font-family: var(--font-display);
+}
